@@ -13,7 +13,7 @@
 {
     NSMutableString *strM = [NSMutableString string];
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull value, BOOL * _Nonnull stop) {
-       // NSLog(@"value的类型:%@",[value class]);
+        // NSLog(@"value的类型:%@",[value class]);
         NSString *propertyStr;
         if ([value isKindOfClass:NSClassFromString(@"__NSArrayI")]||[value isKindOfClass:NSClassFromString(@"__NSCFArray")]) {
             propertyStr = [NSString stringWithFormat:@"@property (nonatomic,strong) NSArray * %@;",key];
@@ -28,14 +28,15 @@
             propertyStr=[NSString stringWithFormat:@"@property (nonatomic,assign) BOOL %@;",key];
         }
         else if ([value isKindOfClass:NSClassFromString(@"__NSCFNumber")]){
-             if (strcmp([value objCType], @encode(float)) == 0||strcmp([value objCType], @encode(double)) == 0) {
+            if (strcmp([value objCType], @encode(float)) == 0||strcmp([value objCType], @encode(double)) == 0) {
                 propertyStr=[NSString stringWithFormat:@"@property (nonatomic,assign) float %@;",key];
             } else if (strcmp([value objCType], @encode(NSUInteger)) == 0||
-                      strcmp([value objCType], @encode(UInt8)) == 0  ||
-                      strcmp([value objCType], @encode(UInt16)) == 0 ||
-                      strcmp([value objCType], @encode(UInt32)) == 0)
+                       strcmp([value objCType], @encode(UInt8)) == 0  ||
+                       strcmp([value objCType], @encode(UInt16)) == 0 ||
+                       strcmp([value objCType], @encode(UInt32)) == 0||
+                       strcmp([value objCType], @encode(long)) == 0)
             {
-              propertyStr=[NSString stringWithFormat:@"@property (nonatomic,assign) int %@;",key];
+                propertyStr=[NSString stringWithFormat:@"@property (nonatomic,assign) int %@;",key];
             }
             else{
                 propertyStr=[NSString stringWithFormat:@"@property (nonatomic,strong)NSNumber *%@;",key];
