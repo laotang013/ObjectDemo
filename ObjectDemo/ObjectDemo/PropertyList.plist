@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>中国</string>
+	<key>empty</key>
+	<false/>
+	<key>floatPro</key>
+	<real>1.1</real>
+	<key>openCount</key>
+	<integer>1</integer>
+	<key>customerArray</key>
+	<array>
+		<dict>
+			<key>arrayDictOne</key>
+			<real>0</real>
+			<key>arrayDictTwo</key>
+			<string>two</string>
+			<key>arrayDictThree</key>
+			<string>Three</string>
+		</dict>
+	</array>
+</dict>
+</plist>
